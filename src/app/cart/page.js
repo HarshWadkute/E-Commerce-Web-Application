@@ -101,7 +101,7 @@ export default function CartPage() {
                 </div>
                 <div className="flex-1 min-w-0 py-2">
                   <h3 className="text-lg font-bold text-gray-900 truncate mb-1">{item.name}</h3>
-                  <p className="text-gray-500 font-medium">${item.price.toFixed(2)}</p>
+                  <p className="text-gray-500 font-medium">₹{item.price.toFixed(2)}</p>
                   <div className="flex items-center gap-4 mt-4">
                     <div className="flex items-center gap-1 bg-gray-50/80 rounded-lg p-1 border border-gray-200/60">
                       <button 
@@ -127,7 +127,7 @@ export default function CartPage() {
                   </div>
                 </div>
                 <div className="text-right hidden sm:block pr-4">
-                  <p className="text-lg font-bold text-gray-900">${(item.price * item.quantity).toFixed(2)}</p>
+                  <p className="text-lg font-bold text-gray-900">₹{(item.price * item.quantity).toFixed(2)}</p>
                 </div>
               </div>
             ))}
@@ -139,7 +139,7 @@ export default function CartPage() {
               
               <div className="flex justify-between mb-3 text-sm font-medium text-gray-600">
                 <span>Subtotal</span>
-                <span className="text-gray-900">${total.toFixed(2)}</span>
+                <span className="text-gray-900">₹{total.toFixed(2)}</span>
               </div>
               <div className="flex justify-between mb-5 text-sm font-medium text-gray-600 pb-5 border-b border-gray-100">
                 <span>Shipping</span>
@@ -148,7 +148,7 @@ export default function CartPage() {
               
               <div className="flex justify-between mb-8 text-xl font-black text-gray-900">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
 
               <form onSubmit={handleCheckout}>

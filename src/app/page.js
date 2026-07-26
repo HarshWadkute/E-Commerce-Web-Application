@@ -56,7 +56,7 @@ export default function Storefront() {
               <div className="p-6 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{product.name}</h3>
-                  <span className="text-lg font-medium text-gray-900">${product.price.toFixed(2)}</span>
+                  <span className="text-lg font-medium text-gray-900">₹{product.price.toFixed(2)}</span>
                 </div>
                 <p className="text-sm text-gray-500 line-clamp-2 mb-6 flex-1">{product.description}</p>
                 <button

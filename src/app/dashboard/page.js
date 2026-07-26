@@ -126,7 +126,7 @@ export default function DashboardPage() {
                 <form onSubmit={createProduct} className="space-y-4">
                   <input type="text" required placeholder="Product Name" value={name} onChange={e=>setName(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" />
                   <textarea required rows={3} placeholder="Description" value={description} onChange={e=>setDescription(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all resize-none" />
-                  <input type="number" step="0.01" required placeholder="Price ($)" value={price} onChange={e=>setPrice(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" />
+                  <input type="number" step="0.01" required placeholder="Price (₹)" value={price} onChange={e=>setPrice(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" />
                   <input type="url" required placeholder="Image URL" value={imageUrl} onChange={e=>setImageUrl(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" />
                   <input type="number" required placeholder="Stock Quantity" value={stock} onChange={e=>setStock(e.target.value)} className="block w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" />
                   
@@ -150,7 +150,7 @@ export default function DashboardPage() {
                        <img src={product.imageUrl} alt={product.name} className="h-16 w-16 rounded-xl object-cover border border-gray-200" />
                        <div className="flex-1 min-w-0">
                          <h3 className="font-bold text-gray-900 truncate mb-1">{product.name}</h3>
-                         <p className="text-sm font-medium text-gray-500">${product.price.toFixed(2)} &bull; Stock: {product.stock}</p>
+                         <p className="text-sm font-medium text-gray-500">₹{product.price.toFixed(2)} &bull; Stock: {product.stock}</p>
                        </div>
                        <button onClick={() => deleteProduct(product._id)} className="p-2.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all">
                          <Trash2 className="h-5 w-5" />
@@ -203,13 +203,13 @@ export default function DashboardPage() {
                     {order.items.map((item, idx) => (
                       <div key={idx} className="flex justify-between text-sm font-medium">
                         <span className="text-gray-600">{item.quantity}x <span className="text-gray-900">{item.name}</span></span>
-                        <span className="text-gray-900">${(item.price * item.quantity).toFixed(2)}</span>
+                        <span className="text-gray-900">₹{(item.price * item.quantity).toFixed(2)}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-5 pt-5 border-t border-gray-100 flex justify-between text-lg font-black text-gray-900">
                     <span>Total</span>
-                    <span>${order.totalAmount.toFixed(2)}</span>
+                    <span>₹{order.totalAmount.toFixed(2)}</span>
                   </div>
                 </div>
                 
