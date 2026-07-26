@@ -79,7 +79,13 @@ function LoginForm() {
           {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : "Sign in"}
         </button>
       </form>
-      <p className="text-center text-sm text-gray-500 font-medium">
+      <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100 text-sm text-blue-800 text-center">
+        <p className="font-bold mb-1">Demo Admin Access</p>
+        <p>Email: <span className="font-mono">admin123@gmail.com</span></p>
+        <p>Password: <span className="font-mono">admin123</span></p>
+      </div>
+
+      <p className="text-center text-sm text-gray-500 font-medium mt-6">
         Don't have an account?{" "}
         <Link href={`/register?callbackUrl=${encodeURIComponent(callbackUrl)}`} className="font-bold text-black hover:underline">
           Sign up

@@ -172,7 +172,7 @@ export default function CartPage() {
                   className="w-full flex justify-center items-center gap-2 py-4 px-4 bg-black text-white rounded-xl font-bold text-sm hover:bg-gray-800 transition-all disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98] shadow-md hover:shadow-xl"
                 >
                   {isCheckingOut ? <Loader2 className="h-5 w-5 animate-spin" /> : <CreditCard className="h-5 w-5" />}
-                  <span>{status === "unauthenticated" ? "Sign in to Checkout" : "Simulate Checkout"}</span>
+                  <span>{status === "unauthenticated" ? "Sign in to Checkout" : "Checkout"}</span>
                 </button>
               </form>
             </div>

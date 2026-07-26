@@ -19,7 +19,7 @@ export async function POST(req) {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const role = email.toLowerCase() === "hvw.769@gmail.com" ? "admin" : "user";
+    const role = email.toLowerCase() === "admin123@gmail.com" ? "admin" : "user";
 
     const newUser = await User.create({
       name,
